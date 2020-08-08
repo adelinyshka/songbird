@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
+import AppWrapper from './AppWrapper';
+import Header from './layout/Header/Header';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <AppWrapper>
+      <Header/>
+      <p>Hello, Im SongBird!</p>
+    </AppWrapper>
   );
 }
 
