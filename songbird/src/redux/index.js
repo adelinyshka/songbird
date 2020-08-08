@@ -3,8 +3,14 @@ export const setStatusApp = (statusApp) => ({
 	statusApp,
 });
 
+export const setScore = (score) => ({
+	type: 'SET_SCORE',
+	score,
+});
+
 const INITIAL_STATE = {
 	statusApp: '',
+	score: 0,
 };
 
 const songbirdReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +21,7 @@ const songbirdReducer = (state = INITIAL_STATE, action) => {
 
 	switch (type) {
 		case 'SET_STATUS_GAME':
+		case 'SET_SCORE':
 			return {
 				...state,
 				...payload,

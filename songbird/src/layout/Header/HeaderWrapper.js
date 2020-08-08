@@ -9,6 +9,11 @@ const HeaderWrapper = styled.header`
 		color: green;
 		font-weight: bold;
 	}
+	
+	.score {
+		font-size: 30px;
+		color: yellow;
+	}
 `;
 
 export default HeaderWrapper;

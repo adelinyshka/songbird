@@ -6,3 +6,8 @@ export const statusAppSelector = createSelector(
 	songbirdSelector,
 	({ statusApp }) => statusApp,
 );
+
+export const scoreSelector = createSelector(
+	songbirdSelector,
+	({ score }) => score,
+);
