@@ -11,3 +11,8 @@ export const scoreSelector = createSelector(
 	songbirdSelector,
 	({ score }) => score,
 );
+
+export const answerRightSelector = createSelector(
+	songbirdSelector,
+	({ numberOfRightAnswer }) => numberOfRightAnswer,
+);

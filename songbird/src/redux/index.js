@@ -8,9 +8,15 @@ export const setScore = (score) => ({
 	score,
 });
 
+export const setAnswerRight = (numberOfRightAnswer) => ({
+	type: 'SET_ANSWER',
+	numberOfRightAnswer,
+});
+
 const INITIAL_STATE = {
 	statusApp: '',
 	score: 0,
+	numberOfRightAnswer: 6,
 };
 
 const songbirdReducer = (state = INITIAL_STATE, action) => {
@@ -20,7 +26,8 @@ const songbirdReducer = (state = INITIAL_STATE, action) => {
 	} = action;
 
 	switch (type) {
-		case 'SET_STATUS_GAME':
+		case 'SET_ANSWER':
+		case 'SET_STATUS_APP':
 		case 'SET_SCORE':
 			return {
 				...state,

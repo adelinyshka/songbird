@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
 	scoreSelector,
 } from './../../redux/selectors';
+// import store from './../../redux/index2'
 
 const Header = () => {
 
