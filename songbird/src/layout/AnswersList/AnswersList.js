@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import birdsData from '../../data/birdsData';
-import { shuffle } from './../../utils/Helpers';
+import { shuffle } from '../../utils/Helpers';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
 const AnswersList = ({level}) => {
 	const arrBirds = birdsData[level].map((bird) => {
 		return (
-			<div>{bird.name}</div>
+			<ButtonGroup vertical>
+				<Button variant="primary">{bird.name}</Button>
+			</ButtonGroup>
 		)
 	})
-
 	return shuffle(arrBirds)
 }
 
