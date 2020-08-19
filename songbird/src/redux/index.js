@@ -1,22 +1,8 @@
-export const setStatusApp = (statusApp) => ({
-	type: 'SET_STATUS_APP',
-	statusApp,
-});
-
-export const setScore = (score) => ({
-	type: 'SET_SCORE',
-	score,
-});
-
-export const setAnswerRight = (numberOfRightAnswer) => ({
-	type: 'SET_ANSWER',
-	numberOfRightAnswer,
-});
-
 const INITIAL_STATE = {
 	statusApp: '',
 	score: 0,
 	numberOfRightAnswer: 6,
+	level: 0,
 };
 
 const songbirdReducer = (state = INITIAL_STATE, action) => {
@@ -29,6 +15,7 @@ const songbirdReducer = (state = INITIAL_STATE, action) => {
 		case 'SET_ANSWER':
 		case 'SET_STATUS_APP':
 		case 'SET_SCORE':
+		case 'SET_LEVEL':
 			return {
 				...state,
 				...payload,

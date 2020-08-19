@@ -1,13 +1,19 @@
 import React from 'react';
 import AppWrapper from './AppWrapper';
 import Header from './layout/Header/Header';
-import Answers from './layout/Answers/Answers';
+import AnswersList from './layout/AnswersList/AnswersList';
+import { useSelector } from 'react-redux';
+import { scoreSelector, levelSelector } from './redux/selectors';
+
 
 function App() {
+
+  const level = useSelector(levelSelector);
+
   return (
     <AppWrapper>
       <Header/>
-      <Answers />
+      <AnswersList level={level}/>
       <p>Hello, Im SongBird!</p>
     </AppWrapper>
   );
