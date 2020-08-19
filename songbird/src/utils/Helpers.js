@@ -1,5 +1,5 @@
 function getRandomNumber() {
-	return Math.floor(Math.random() * 6);
+	return Math.ceil(Math.random() * 6);
 }
 
 function shuffle(array) {

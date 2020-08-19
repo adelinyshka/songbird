@@ -8,13 +8,14 @@ export const setScore = (score) => ({
 	score,
 });
 
+
 export const setLevel = (level) => ({
 	type: 'SET_LEVEL',
 	level,
 });
 
-export const setAnswerRight = (numberOfRightAnswer) => ({
+export const setAnswerRight = (isRight) => ({
 	type: 'SET_ANSWER',
-	numberOfRightAnswer,
+	isRight,
 });
 

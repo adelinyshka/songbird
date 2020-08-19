@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
 	statusApp: '',
 	score: 0,
-	numberOfRightAnswer: 6,
+	isRight: false,
 	level: 0,
 };
 
