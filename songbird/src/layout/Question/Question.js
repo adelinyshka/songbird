@@ -6,7 +6,6 @@ import 'react-h5-audio-player/lib/styles.css';
 
 const Question = ({level, answerID}) => {
 	const audioQuestion = birdsData[level][answerID - 1].audio;
-	console.log('answer: ' + birdsData[level][answerID - 1].name);
 
 	return(
 		<div>

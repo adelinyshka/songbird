@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-	statusApp: '',
+	statusApp: true,
 	score: 0,
 	isRight: false,
 	level: 0,
