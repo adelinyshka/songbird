@@ -1,36 +1,46 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import birdsData from '../../data/birdsData';
-import { shuffle } from '../../utils/Helpers';
 import { Button } from 'react-bootstrap';
-import { setAnswerRight } from '../../redux/actions';
-import {useDispatch} from 'react-redux';
+import { setAnswerRight, setScore } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { scoreSelector, } from '../../redux/selectors';
 
-const AnswersList = ({level, rightAnswer}) => {
+
+const AnswersList = ({level, answerID}) => {
 	const dispatch = useDispatch();
+	const score = useSelector(scoreSelector);
+	const [scores, setScores] = useState(6);
+	const rightAnswerId = answerID
 
-	const checkAnswer = useCallback((answer, rightAnswer) => {
-		const correct = answer === rightAnswer;
+
+	const checkAnswer = useCallback((answer, rightAnswerId) => {
+		const correct = answer === rightAnswerId;
+		dispatch(setAnswerRight(false));
+
 		if(correct) {
 			dispatch(setAnswerRight(true));
 			console.log('true');
+			setScores(scores);
+			dispatch(setScore(score + scores));
 		}
-		else console.log('false')
-	},[ dispatch])
+		else {
+			console.log('false')
+			setScores(scores - 1)
+		}
+	},[ dispatch, scores, level, score])
 
-
-	const arrBirds = birdsData[level].map((bird) => {
+	return birdsData[level].map((bird) => {
 		return (
 				<Button variant="primary"
 				        key={bird.id}
 				        id={bird.id}
 								onClick={() => {
-									checkAnswer(bird.id, rightAnswer);
+									checkAnswer(bird.id, rightAnswerId);
 								}} >
 					{bird.name}
 				</Button>
 		)
 	})
-	return shuffle(arrBirds);
 }
 
 export default AnswersList;

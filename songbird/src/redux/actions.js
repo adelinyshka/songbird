@@ -19,3 +19,4 @@ export const setAnswerRight = (isRight) => ({
 	isRight,
 });
 
+

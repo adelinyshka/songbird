@@ -21,3 +21,8 @@ export const levelSelector = createSelector(
 	songbirdSelector,
 	({ level }) => level,
 );
+
+export const idRight = createSelector(
+	songbirdSelector,
+	({ id }) => id,
+);
