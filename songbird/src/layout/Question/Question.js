@@ -38,7 +38,7 @@ const Question = ({ answerID}) => {
 							             [
 								             RHAP_UI.PROGRESS_BAR,
 								             // RHAP_UI.CURRENT_TIME,
-								             RHAP_UI.DURATIONs
+								             RHAP_UI.DURATION
 							             ]
 						             }
 						             autoPlay={false}

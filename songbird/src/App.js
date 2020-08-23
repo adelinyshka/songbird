@@ -20,6 +20,7 @@ import {
 import Question from './layout/Question/Question';
 import { useDispatch, useSelector } from 'react-redux';
 import LeftBlock from './layout/LeftBlock/LeftBlock';
+import Footer from './layout/Footer/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -66,6 +67,7 @@ function App() {
           <Question answerID={answerID}/>
           <LeftBlock answerID={answerID} />
           <RightBlock />
+          <Footer />
       </AppWrapper>)
         :
         ( <AppWrapper>

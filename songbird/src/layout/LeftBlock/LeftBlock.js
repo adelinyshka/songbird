@@ -17,30 +17,11 @@ const LeftBlock = ({answerID}) => {
 	const level = useSelector(levelSelector);
 	const isAnswerRight = useSelector(answerRightSelector);
 
-	const goToNextLevel = useCallback(() => {
-		if(level === 5) {
-			console.log('finish');
-			dispatch(setStatusApp(false));
-			dispatch(setLevel(0))
-		}
-		else {
-			if(isAnswerRight) {
-				dispatch(setLevel(level + 1))
-				dispatch(setAnswerRight(false))
-			}
-		}
-	}, [level, isAnswerRight, dispatch, setStatusApp]);
+
 
 	return(
 		<ButtonGroup vertical>
 			<AnswersList answerID={answerID}/>
-			{isAnswerRight ?
-				<Button
-					onClick={()=>goToNextLevel()}>Дальше</Button>
-				:
-				<Button
-					onClick={()=>{}}>Дальше</Button>
-			}
 		</ButtonGroup>
 	)
 }
