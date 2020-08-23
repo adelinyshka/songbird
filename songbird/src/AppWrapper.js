@@ -6,6 +6,7 @@ const AppWrapper = styled.div`
 	margin: 0 auto;
 	color: white;
 	padding: 30px;
+	max-width: 1200px;
 `;
 
 export default AppWrapper;

@@ -8,7 +8,6 @@ export const setScore = (score) => ({
 	score,
 });
 
-
 export const setLevel = (level) => ({
 	type: 'SET_LEVEL',
 	level,
@@ -17,6 +16,16 @@ export const setLevel = (level) => ({
 export const setAnswerRight = (isRight) => ({
 	type: 'SET_ANSWER',
 	isRight,
+});
+
+export const setIdClicked = (id) => ({
+	type: 'SET_ID',
+	id,
+});
+
+export const setWasClick = (wasClick) => ({
+	type: 'SET_WAS_CLICK',
+	wasClick,
 });
 
 

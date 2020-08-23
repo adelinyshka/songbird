@@ -3,6 +3,8 @@ const INITIAL_STATE = {
 	score: 0,
 	isRight: false,
 	level: 0,
+	id: 0,
+	wasClick: false
 };
 
 const songbirdReducer = (state = INITIAL_STATE, action) => {
@@ -16,6 +18,8 @@ const songbirdReducer = (state = INITIAL_STATE, action) => {
 		case 'SET_STATUS_APP':
 		case 'SET_SCORE':
 		case 'SET_LEVEL':
+		case 'SET_ID':
+		case 'SET_WAS_CLICK':
 			return {
 				...state,
 				...payload,

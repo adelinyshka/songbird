@@ -22,7 +22,12 @@ export const levelSelector = createSelector(
 	({ level }) => level,
 );
 
-export const idRight = createSelector(
+export const idClickedSelector = createSelector(
 	songbirdSelector,
 	({ id }) => id,
+);
+
+export const wasClickSelector = createSelector(
+	songbirdSelector,
+	({ wasClick }) => wasClick,
 );
