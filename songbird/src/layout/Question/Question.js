@@ -6,11 +6,11 @@ import QuestionWrapper from './QuestionWrapper';
 import { useSelector } from 'react-redux';
 import { levelSelector } from '../../redux/selectors';
 import { Icon } from '@iconify/react';
-import playButtonR from '@iconify/icons-gg/play-button-r';
-import playPauseR from '@iconify/icons-gg/play-pause-r';
-import volumeUpSquare from '@iconify/icons-jam/volume-up-square';
-import volumeSquare from '@iconify/icons-jam/volume-square';
 import {answerRightSelector} from '../../redux/selectors';
+import motionPlayOutline from '@iconify/icons-mdi/motion-play-outline';
+import motionPauseOutline from '@iconify/icons-mdi/motion-pause-outline';
+import volume2 from '@iconify/icons-feather/volume-2';
+import volumeX from '@iconify/icons-feather/volume-x';
 
 const Question = ({ answerID}) => {
 	const level = useSelector(levelSelector);
@@ -33,14 +33,12 @@ const Question = ({ answerID}) => {
 					<div className="bird-block">
 						<h1 className="bird-name">{nameBird}</h1>
 						<AudioPlayer className="wow-player"
-						             layout="horizontal-reverse"
-						             customProgressBarSection={
-							             [
-								             RHAP_UI.PROGRESS_BAR,
-								             // RHAP_UI.CURRENT_TIME,
-								             RHAP_UI.DURATION
-							             ]
-						             }
+						             layout="stacked-reverse"
+						             customProgressBarSection={[
+							             RHAP_UI.MAIN_CONTROLS,
+							             RHAP_UI.PROGRESS_BAR,
+						             ]}
+						             customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
 						             autoPlay={false}
 						             autoPlayAfterSrcChange={false}
 						             showJumpControls={false}
@@ -48,10 +46,10 @@ const Question = ({ answerID}) => {
 						             src={ audioQuestion }
 						             id={ birdsData[level][answerID - 1].id }
 						             customIcons={{
-							             play: <Icon icon={playButtonR} color="white" />,
-							             pause: <Icon icon={playPauseR} color="white" />,
-							             volume: <Icon icon={volumeUpSquare} color="white" />,
-							             volumeMute: <Icon icon={volumeSquare} color="white" />,
+							             play: <Icon icon={motionPlayOutline} color="white" />,
+							             pause: <Icon icon={motionPauseOutline} color="white" />,
+							             volume: <Icon icon={volume2} color="white" />,
+							             volumeMute: <Icon icon={volumeX} color="white" />,
 						             }}
 						/>
 					</div>
@@ -61,27 +59,25 @@ const Question = ({ answerID}) => {
 							<img className="bird-pic" src={picDefaultBird} alt="" />
 						</div>
 						<div className="bird-block">
-							<h1 className="bird-name">*****</h1>
+							<h1 className="bird-name-star">*****</h1>
 							<AudioPlayer className="wow-player"
-							             layout="horizontal-reverse"
-							             customProgressBarSection={
-								             [
-									             RHAP_UI.PROGRESS_BAR,
-									             // RHAP_UI.CURRENT_TIME,
-									             RHAP_UI.DURATION
-								             ]
-							             }
+							             layout="stacked-reverse"
+							             customProgressBarSection={[
+							             	 RHAP_UI.MAIN_CONTROLS,
+								             RHAP_UI.PROGRESS_BAR,
+								             ]}
+							             customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
+							             customAdditionalControls={[]}
 							             autoPlay={false}
 							             autoPlayAfterSrcChange={false}
 							             showJumpControls={false}
-							             customAdditionalControls={[]}
 							             src={ audioQuestion }
 							             id={ birdsData[level][answerID - 1].id }
 							             customIcons={{
-								             play: <Icon icon={playButtonR} color="white" />,
-								             pause: <Icon icon={playPauseR} color="white" />,
-								             volume: <Icon icon={volumeUpSquare} color="white" />,
-								             volumeMute: <Icon icon={volumeSquare} color="white" />,
+								             play: <Icon icon={motionPlayOutline} color="white" />,
+								             pause: <Icon icon={motionPauseOutline} color="white" />,
+								             volume: <Icon icon={volume2} color="white" />,
+								             volumeMute: <Icon icon={volumeX} color="white" />,
 							             }}/>
 						</div>
 					</>}

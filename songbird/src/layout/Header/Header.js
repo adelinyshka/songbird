@@ -17,9 +17,9 @@ const Header = () => {
 		<HeaderWrapper>
 			<div className="wrapper-header">
 				<h1 className="logo">Song Bird</h1>
-				<div className="score"> Счет: {score}</div>
+				<div className="score"> счет: {score}</div>
 			</div>
-			<ButtonGroup className="pangination">
+			<ButtonGroup className="pangination" >
 				{birdType.map((bird)=> {
 					return <Button
 						key={bird.level}

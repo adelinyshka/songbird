@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
 	answerRightSelector,
 	levelSelector,
-	scoreSelector,
 } from '../../redux/selectors';
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { setAnswerRight, setLevel, setStatusApp } from '../../redux/actions';
 import FooterWrapper from './FooterWrapper';
 const classNames = require('classnames');
@@ -34,8 +33,10 @@ const Footer = () => {
 			{ isAnswerRight
 				? <Button className="footer-btn active"
 					onClick={()=>goToNextLevel()}>Следующий вопрос</Button>
-				: <Button className="footer-btn inactive"
-					onClick={()=>{}}>Выберите верный ответ</Button>
+				:
+				<Button className="footer-btn inactive"
+				        disabled
+				        onClick={()=>{}}>Выберите верный ответ</Button>
 			}
 		</FooterWrapper>
 

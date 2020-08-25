@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
 const QuestionWrapper = styled.div`
-
 	.default-wrapper {
 		display: flex;
 		padding: 20px;
 		border: 3px solid white;
 		border-radius: 16px;
+		font-family: 'Raleway', sans-serif;
+		
+		@media (max-width: 768px) {
+			padding: 10px;
+			border: 1px solid white;
+		}
 	}
 	
 	.bird-block {
@@ -22,22 +27,39 @@ const QuestionWrapper = styled.div`
 		border-radius: 50%;
 	}
 	
+	.bird-name-star {
+		font-size: 35px;
+		display: flex;
+    align-items: center;
+    padding: 0 0 0 22px;
+    
+    @media (max-width: 768px) {
+			font-size: 20px;
+			padding: 0 0 0 14px;
+		}
+	}
+	
 	.bird-name {
 		font-size: 25px;
 		display: flex;
     align-items: center;
-    padding: 0 0 0 70px;
+    padding: 0 0 0 2px;
+    
+     @media (max-width: 768px) {
+			font-size: 20px;
+			padding: 0 0 0 14px;
+			}
 		}
 
 	.wow-player.rhap_container {
 		background: #316099;
 		outline: none;
 		box-shadow: none;
+		
+		@media (max-width: 768px) {
+			padding: 5px;
+		}
 	}
-	
-	.rhap_horizontal-reverse .rhap_controls-section {
-    margin-right: 20px;
-}
 	
 	.rhap_progress-indicator,
 	.rhap_volume-indicator {
@@ -63,7 +85,6 @@ const QuestionWrapper = styled.div`
 	 .rhap_time.rhap_total-time {
 		color: white;
 	}
-	
 `;
 
 export default QuestionWrapper;

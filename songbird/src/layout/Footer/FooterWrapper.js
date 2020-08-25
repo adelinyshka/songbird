@@ -10,12 +10,17 @@ const FooterWrapper = styled.footer`
 		line-height: 26px;
 		text-align: center;
 		letter-spacing: 0.04em;
+		font-family: 'Raleway', sans-serif;
 	}
 	
 	.inactive {
 		background: #1F3F68!important;
 		color: white;
 		border: 3px solid white!important;
+		
+		@media (max-width: 768px) {
+			border: 1px solid white!important;
+		}
 		
 		&:hover,
 		&:focus,
@@ -30,13 +35,17 @@ const FooterWrapper = styled.footer`
 		color: white;
 	  border: 3px solid white!important;
 	  
+	  
+	  @media (max-width: 768px) {
+			border: 1px solid white!important;
+		}
+	  
 	  &:hover,
 		&:focus,
 		&:active {
 			background: #4D83B5;
 			outline: none;
 		}
-
 	}
 `;
 

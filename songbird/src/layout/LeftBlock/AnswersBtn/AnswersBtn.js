@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import birdsData from '../../../data/birdsData';
-import { Button } from 'react-bootstrap';
 import {
 	setAnswerRight,
 	setScore,
@@ -12,8 +11,9 @@ import {
 	answerRightSelector, levelSelector,
 	scoreSelector,
 } from '../../../redux/selectors';
+import AnswersBtnWrapper from './AnswersBtnWrapper';
 
-const AnswersList = ({ answerID}) => {
+const AnswersBtn = ({ answerID}) => {
 	const dispatch = useDispatch();
 	const score = useSelector(scoreSelector);
 	const [scores, setScores] = useState(6);
@@ -22,13 +22,15 @@ const AnswersList = ({ answerID}) => {
 	const [answerClicked, setAnswerClicked] = useState(false);
 	const level = useSelector(levelSelector);
 
+
 	const checkAnswer = useCallback((answer, rightAnswerId,) => {
 		const correct = answer === rightAnswerId;
 		dispatch(setWasClick(true));
 		dispatch(setIdClicked(answer - 1))
+
 		if(!answerClicked) {
 			if(correct) {
-				setAnswerClicked(true)
+				setAnswerClicked(true);
 				dispatch(setAnswerRight(true));
 				setScores(scores);
 				dispatch(setScore(score + scores));
@@ -51,16 +53,16 @@ const AnswersList = ({ answerID}) => {
 
 	return birdsData[level].map((bird) => {
 		return (
-				<Button variant="primary"
+				<AnswersBtnWrapper variant="primary"
 				        key={bird.id}
 				        id={bird.id}
 								onClick={() => {
 									checkAnswer(bird.id, rightAnswerId);
 								}} >
 					{bird.name}
-				</Button>
+				</AnswersBtnWrapper>
 		)
 	})
 }
 
-export default AnswersList;
+export default AnswersBtn;

@@ -7,6 +7,23 @@ const AppWrapper = styled.div`
 	color: white;
 	padding: 30px;
 	max-width: 1200px;
+	
+	@media (max-width: 768px) {
+		padding: 10px;
+	}
+	
+	.alignment {
+		display: flex;
+		justify-content: space-between;
+		margin: 20px 0;
+		
+		@media (max-width: 768px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 10px 0;
+		}	
+	}
 `;
 
 export default AppWrapper;
