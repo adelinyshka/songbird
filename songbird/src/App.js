@@ -6,7 +6,6 @@ import {getRandomNumber} from './utils/Helpers';
 import Header from './layout/Header/Header';
 import {
   levelSelector,
-  answerRightSelector,
   statusAppSelector, scoreSelector, idClickedSelector
 } from './redux/selectors';
 import {
@@ -23,7 +22,6 @@ import Footer from './layout/Footer/Footer';
 function App() {
   const dispatch = useDispatch();
   const level = useSelector(levelSelector);
-  const isAnswerRight = useSelector(answerRightSelector);
   const randomNum = getRandomNumber();
   const [answerID, setAnswerID] = useState(randomNum);
   const isGameOn = useSelector(statusAppSelector);
@@ -34,8 +32,10 @@ function App() {
     dispatch(setIdClicked(idClicked))
   },[idClicked,dispatch])
 
+
   useEffect(() => {
     setAnswerID(randomNum);
+    // eslint-disable-next-line
   }, [level]);
 
   const startNewGame = useCallback(()=> {

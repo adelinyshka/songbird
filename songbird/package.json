@@ -1,5 +1,6 @@
 {
   "name": "songbird",
+  "author": "Adel Dubinnikova",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -8,7 +8,7 @@ import {
 } from '../../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-	answerRightSelector, levelSelector,
+	 levelSelector,
 	scoreSelector,
 } from '../../../redux/selectors';
 import AnswersBtnWrapper from './AnswersBtnWrapper';
@@ -18,7 +18,6 @@ const AnswersBtn = ({ answerID}) => {
 	const score = useSelector(scoreSelector);
 	const [scores, setScores] = useState(6);
 	const rightAnswerId = answerID;
-	const isAnswerRight = useSelector(answerRightSelector);
 	const [answerClicked, setAnswerClicked] = useState(false);
 	const level = useSelector(levelSelector);
 
@@ -42,14 +41,14 @@ const AnswersBtn = ({ answerID}) => {
 				console.log('answer false');
 			}
 	}
-	},[ dispatch, scores, level, score,isAnswerRight, answerClicked])
+	},[ dispatch, scores, score, answerClicked])
 
 		useEffect(() => {
 			dispatch(setAnswerRight(false));
 			setAnswerClicked(false);
 			setScores(6);
 			dispatch(setWasClick(false));
-		},[level])
+		},[level, dispatch])
 
 	return birdsData[level].map((bird) => {
 		return (

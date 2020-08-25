@@ -7,7 +7,6 @@ import {
 import { Button } from 'react-bootstrap';
 import { setAnswerRight, setLevel, setStatusApp } from '../../redux/actions';
 import FooterWrapper from './FooterWrapper';
-const classNames = require('classnames');
 
 const Footer = () => {
 	const dispatch = useDispatch();
@@ -26,7 +25,7 @@ const Footer = () => {
 				dispatch(setAnswerRight(false))
 			}
 		}
-	}, [level, isAnswerRight, dispatch, setStatusApp]);
+	}, [level, isAnswerRight, dispatch]);
 
 	return(
 		<FooterWrapper>
