@@ -1,21 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import AppWrapper from './AppWrapper';
 import { Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import AppWrapper from './AppWrapper';
 import RightBlock from './layout/RightBlock/RightBlock';
-import {getRandomNumber} from './utils/Helpers';
+import { getRandomNumber } from './utils/Helpers';
 import Header from './layout/Header/Header';
 import {
   levelSelector,
-  statusAppSelector, scoreSelector, idClickedSelector
+  statusAppSelector, scoreSelector, idClickedSelector,
 } from './redux/selectors';
 import {
   setLevel,
   setScore,
   setStatusApp,
-  setIdClicked
+  setIdClicked,
 } from './redux/actions';
 import Question from './layout/Question/Question';
-import { useDispatch, useSelector } from 'react-redux';
 import LeftBlock from './layout/LeftBlock/LeftBlock';
 import Footer from './layout/Footer/Footer';
 
@@ -29,50 +29,53 @@ function App() {
   const idClicked = useSelector(idClickedSelector);
 
   useCallback(() => {
-    dispatch(setIdClicked(idClicked))
-  },[idClicked,dispatch])
-
+    dispatch(setIdClicked(idClicked));
+  }, [idClicked, dispatch]);
 
   useEffect(() => {
     setAnswerID(randomNum);
     // eslint-disable-next-line
   }, [level]);
 
-  const startNewGame = useCallback(()=> {
+  const startNewGame = useCallback(() => {
     dispatch(setStatusApp(true));
-    dispatch(setLevel(0))
-    dispatch(setScore(0))
-  }, [ dispatch])
+    dispatch(setLevel(0));
+    dispatch(setScore(0));
+  }, [dispatch]);
 
-    return (
-      isGameOn ? (
+  return (
+    isGameOn ? (
+      <AppWrapper>
+        <Header />
+        <Question answerID={answerID} />
+        <div className="alignment">
+          <LeftBlock answerID={answerID} />
+          <RightBlock answerID={answerID} />
+        </div>
+        <Footer />
+      </AppWrapper>
+    )
+      : (
         <AppWrapper>
-          <Header/>
-          <Question answerID={answerID}/>
-          <div className='alignment'>
-            <LeftBlock answerID={answerID} />
-            <RightBlock answerID={answerID} />
-          </div>
-          <Footer />
-      </AppWrapper>)
-        :
-        ( <AppWrapper>
-            <div>
-              <div>Игра закончена!</div>
-              <div>Вы набрали {score} очков из 36.</div>
-
-              {score === 36 ?
-                <>
-                  <div>Вы набрали максимальное количество очков!</div>
-                  <Button onClick={() => startNewGame()}>Повторить игру</Button>
-                </>
-                :
-                <Button onClick={() => startNewGame()}>Повторить игру</Button>
-              }
+	        <div className="end-game-wrapper">
+	          <div className="end-game">
+	            <h2>Игра закончена!</h2>
+	            <p>Вы набрали&nbsp;{score}&nbsp;очков из 36.</p>
+		          {score === 36
+	              ? (
+	                <>
+	                  <p>Вы набрали максимальное количество очков!</p>
+	                  <Button className="end-game-btn"
+	                          onClick={() => startNewGame()}>Повторить игру</Button>
+	                </>
+	              )
+	              : <Button className="end-game-btn"
+	                        onClick={() => startNewGame()}>Повторить игру</Button>}
             </div>
-          </AppWrapper>
-        )
-    );
+	        </div>
+        </AppWrapper>
+      )
+  );
 }
 
 export default App;
