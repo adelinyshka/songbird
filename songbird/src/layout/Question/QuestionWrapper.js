@@ -31,7 +31,8 @@ const QuestionWrapper = styled.div`
 		font-size: 35px;
 		display: flex;
     align-items: center;
-    padding: 0 0 0 22px;
+    padding: 0 0 0 20px;
+    line-height: 1;
     
     @media (max-width: 768px) {
 			font-size: 20px;
@@ -41,9 +42,10 @@ const QuestionWrapper = styled.div`
 	
 	.bird-name {
 		font-size: 25px;
+		line-height: 1;
 		display: flex;
     align-items: center;
-    padding: 0 0 0 2px;
+    padding: 0 0 0 20px;
     
      @media (max-width: 768px) {
 			font-size: 20px;
@@ -55,6 +57,7 @@ const QuestionWrapper = styled.div`
 		background: #316099;
 		outline: none;
 		box-shadow: none;
+		padding: 0;
 		
 		@media (max-width: 768px) {
 			padding: 5px;

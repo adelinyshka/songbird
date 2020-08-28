@@ -5,7 +5,7 @@ const AppWrapper = styled.div`
 	max-width: 1080px;
 	margin: 0 auto;
 	color: white;
-	padding: 30px;
+	padding: 10px 20px;
 	max-width: 1200px;
 	
 	@media (max-width: 768px) {
@@ -15,7 +15,7 @@ const AppWrapper = styled.div`
 	.alignment {
 		display: flex;
 		justify-content: space-between;
-		margin: 20px 0;
+		margin: 15px 0;
 		
 		@media (max-width: 768px) {
 			flex-direction: column;

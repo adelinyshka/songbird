@@ -50,7 +50,7 @@ const HeaderWrapper = styled.header`
 		justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     border-radius: 5px;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
