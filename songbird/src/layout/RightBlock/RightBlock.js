@@ -26,10 +26,12 @@ const RightBlock = ({ answerID }) => {
       {wasClicked
         ? (
           <>
-            <div className="d-flex ">
-              <img className="bird-pic"
-                   src={birdsData[level][clickedId].image}
-                   alt="bird pic" />
+            <div className="d-flex">
+              <img
+                className="bird-pic"
+                src={birdsData[level][clickedId].image}
+                alt="bird pic"
+              />
               <div className="right-block-bird">
                 <div className="pl-3 font-weight-bold">
                   {birdsData[level][clickedId].name}

@@ -12,6 +12,8 @@ import {
   scoreSelector,
 } from '../../../redux/selectors';
 import AnswersBtnWrapper from './AnswersBtnWrapper';
+import useSound from 'use-sound';
+
 
 const AnswersBtn = ({ answerID }) => {
   const dispatch = useDispatch();
@@ -20,23 +22,24 @@ const AnswersBtn = ({ answerID }) => {
   const rightAnswerId = answerID;
   const [answerClicked, setAnswerClicked] = useState(false);
   const level = useSelector(levelSelector);
+  const wrong = './assets/audio/wrong.mp3';
+  const right = './assets/audio/right.mp3';
+  const [playWrong] = useSound(right);
+  const [playRight] = useSound(wrong);
 
-  const checkAnswer = useCallback((answer, rightAnswerId) => {
-    const correct = answer === rightAnswerId;
+  const checkAnswer = useCallback((answer, rightAnswer) => {
+    const correct = answer === rightAnswer;
     dispatch(setWasClick(true));
     dispatch(setIdClicked(answer - 1));
-
     if (!answerClicked) {
       if (correct) {
         setAnswerClicked(true);
         dispatch(setAnswerRight(true));
         setScores(scores);
         dispatch(setScore(score + scores));
-        console.log('answer true');
       } else {
         setScores(scores - 1);
         dispatch(setAnswerRight(false));
-        console.log('answer false');
       }
     }
   }, [dispatch, scores, score, answerClicked]);
@@ -48,14 +51,27 @@ const AnswersBtn = ({ answerID }) => {
     dispatch(setWasClick(false));
   }, [level, dispatch]);
 
+  useEffect(() => {
+    console.log(birdsData[level][answerID - 1].name);
+  },[answerID, level])
+
   return birdsData[level].map((bird) => (
     <AnswersBtnWrapper
       variant="primary"
       key={bird.id}
       id={bird.id}
-      onClick={() => {
+      onClick={
+        () => {
         checkAnswer(bird.id, rightAnswerId);
-      }}
+        if(bird.id === rightAnswerId) {
+          playWrong()
+        }
+        else {
+          playRight()
+        }
+
+      }
+      }
     >
       {bird.name}
     </AnswersBtnWrapper>

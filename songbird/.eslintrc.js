@@ -50,5 +50,6 @@ module.exports = {
         'react/require-default-props': 'warn',
         'no-param-reassign': 'off',
         'no-tabs': 'off',
+        'no-mixed-spaces-and-tabs': 'off',
     },
 };

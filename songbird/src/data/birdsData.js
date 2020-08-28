@@ -4,25 +4,38 @@ const birdsData = [
       id: 1,
       name: 'Ворон',
       species: 'Corvus corax',
-      description: 'Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.',
+      description: 'Ворон – крупная птица. Длина тела достигает 70 '
+        + 'сантиметров, размах крыльев – до полутора метров. '
+        + 'Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в '
+        + 'день, когда черные вороны улетят от Тауэра, монархия рухнет.',
       image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
-      audio: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3',
+      audio: 'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/'
+        + 'XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3',
     },
     {
       id: 2,
       name: 'Журавль',
       species: 'Grus grus',
-      description: 'Звуки, издаваемые журавлем, похожи на звонкое «кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица начинает запев со слога «кур», а вторая подхватывает «лы». Если птица поёт одна, то она издает только звук «кур».',
+      description: 'Звуки, издаваемые журавлем, похожи на звонкое '
+        + '«кур-лы – кур-лы». Журавли чаще всего поют дуэтом – одна птица '
+        + 'начинает запев со слога «кур», а вторая подхватывает «лы». '
+        + 'Если птица поёт одна, то она издает только звук «кур».',
       image: 'https://live.staticflickr.com/65535/49221158846_b0b69a58f1.jpg',
-      audio: 'https://www.xeno-canto.org/sounds/uploaded/BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3',
+      audio: 'https://www.xeno-canto.org/sounds/uploaded/'
+        + 'BLMSIUFTFU/XC512582-190604_1087_Grus_tok.mp3',
     },
     {
       id: 3,
       name: 'Ласточка',
       species: 'Delichon urbicum',
-      description: 'Для ласточек характерно негромкое щебетание. Песни ласточек не смолкают на протяжении всего лета. Исследователи различают у птиц до 6 щебечущих звуков: «вит», «ви-вит», «чивит», «чиривит» и т.п. Ласточки любят петь дуэтом.',
+      description: 'Для ласточек характерно негромкое щебетание. Песни '
+        + 'ласточек не смолкают на протяжении всего лета. Исследователи '
+        + 'различают у птиц до 6 щебечущих звуков: «вит», «ви-вит», «чивит», '
+        + '«чиривит» и т.п. Ласточки любят петь дуэтом.',
       image: 'https://live.staticflickr.com//65535//48539007512_5029d2a9a0.jpg',
-      audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_100%2Bex_fouragerend_gezien_%20%282%29.mp3',
+      audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/'
+        + 'XC489247-190724_09.10h_huiszwaluw_biesbosch_amaliahoeve_roep_'
+        + '100%2Bex_fouragerend_gezien_%20%282%29.mp3',
     },
     {
       id: 4,

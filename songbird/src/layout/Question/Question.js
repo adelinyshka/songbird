@@ -1,5 +1,4 @@
 import React from 'react';
-import birdsData from '../../data/birdsData';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { useSelector } from 'react-redux';
@@ -8,6 +7,7 @@ import motionPlayOutline from '@iconify/icons-mdi/motion-play-outline';
 import motionPauseOutline from '@iconify/icons-mdi/motion-pause-outline';
 import volume2 from '@iconify/icons-feather/volume-2';
 import volumeX from '@iconify/icons-feather/volume-x';
+import birdsData from '../../data/birdsData';
 import { answerRightSelector, levelSelector } from '../../redux/selectors';
 
 import QuestionWrapper from './QuestionWrapper';
@@ -20,7 +20,6 @@ const Question = ({ answerID }) => {
   const picBird = birdsData[level][answerID - 1].image;
   const picDefaultBird = './assets/img/customBird.jpg';
 
-  console.log(nameBird);
   return (
     <QuestionWrapper>
       <div className="default-wrapper">
@@ -48,8 +47,10 @@ const Question = ({ answerID }) => {
                   src={ audioQuestion }
                   id={ birdsData[level][answerID - 1].id }
                   customIcons={{
-							             play: <Icon icon={motionPlayOutline} color="white" />,
-							             pause: <Icon icon={motionPauseOutline} color="white" />,
+							             play: <Icon icon={motionPlayOutline}
+                                       color="white" />,
+							             pause: <Icon icon={motionPauseOutline}
+                                        color="white" />,
 							             volume: <Icon icon={volume2} color="white" />,
 							             volumeMute: <Icon icon={volumeX} color="white" />,
 						             }}
@@ -79,8 +80,10 @@ const Question = ({ answerID }) => {
                   src={ audioQuestion }
                   id={ birdsData[level][answerID - 1].id }
                   customIcons={{
-								             play: <Icon icon={motionPlayOutline} color="white" />,
-								             pause: <Icon icon={motionPauseOutline} color="white" />,
+								             play: <Icon icon={motionPlayOutline}
+                                         color="white" />,
+								             pause: <Icon icon={motionPauseOutline}
+                                          color="white" />,
 								             volume: <Icon icon={volume2} color="white" />,
 								             volumeMute: <Icon icon={volumeX} color="white" />,
 							             }}
@@ -89,7 +92,6 @@ const Question = ({ answerID }) => {
             </>
           )}
       </div>
-
     </QuestionWrapper>
   );
 };

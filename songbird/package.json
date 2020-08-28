@@ -20,7 +20,8 @@
     "react-scripts": "^3.4.3",
     "redux": "^4.0.5",
     "reselect": "^4.0.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "use-sound": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

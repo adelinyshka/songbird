@@ -18,6 +18,7 @@ import {
 import Question from './layout/Question/Question';
 import LeftBlock from './layout/LeftBlock/LeftBlock';
 import Footer from './layout/Footer/Footer';
+import useSound from 'use-sound';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,9 @@ function App() {
   const score = useSelector(scoreSelector);
   const idClicked = useSelector(idClickedSelector);
 
+  const best = './assets/audio/best_end.mp3';
+  const [playBest] = useSound(best);
+
   useCallback(() => {
     dispatch(setIdClicked(idClicked));
   }, [idClicked, dispatch]);
@@ -36,6 +40,12 @@ function App() {
     setAnswerID(randomNum);
     // eslint-disable-next-line
   }, [level]);
+
+  useEffect(() => {
+    if(!isGameOn) {
+      playBest();
+    }
+  },[isGameOn])
 
   const startNewGame = useCallback(() => {
     dispatch(setStatusApp(true));
@@ -57,21 +67,25 @@ function App() {
     )
       : (
         <AppWrapper>
+	        <Header />
 	        <div className="end-game-wrapper">
 	          <div className="end-game">
 	            <h2>Игра закончена!</h2>
-	            <p>Вы набрали&nbsp;{score}&nbsp;очков из 36.</p>
-		          {score === 36
-	              ? (
+		          {score === 36 && (
 	                <>
+                    <h3>Поздравляем с абсолютной победой!</h3>
 	                  <p>Вы набрали максимальное количество очков!</p>
-	                  <Button className="end-game-btn"
-	                          onClick={() => startNewGame()}>Повторить игру</Button>
-	                </>
-	              )
-	              : <Button className="end-game-btn"
-	                        onClick={() => startNewGame()}>Повторить игру</Button>}
-            </div>
+	                </>)}
+              <p>
+                Вы набрали&nbsp;
+                {score}
+                &nbsp;очков из 36.
+              </p>
+              <Button className="end-game-btn"
+                      onClick={() => startNewGame()}>
+                Повторить игру
+              </Button>
+	          </div>
 	        </div>
         </AppWrapper>
       )

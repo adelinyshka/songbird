@@ -15,7 +15,6 @@ const Footer = () => {
 
   const goToNextLevel = useCallback(() => {
     if (level === 5) {
-      console.log('finish');
       dispatch(setStatusApp(false));
       dispatch(setLevel(0));
     } else if (isAnswerRight) {

@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 import allReducers from './redux/rootReducer';
 
 const store = createStore(allReducers,
@@ -20,5 +19,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-
-serviceWorker.unregister();

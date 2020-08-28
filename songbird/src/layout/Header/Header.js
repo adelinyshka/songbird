@@ -18,7 +18,9 @@ const Header = () => {
     <HeaderWrapper>
       <div className="wrapper-header">
         <h1 className="logo">Song Bird</h1>
-        <div className="score">счет:{score}
+        <div className="score">
+          счет:
+          {score}
         </div>
       </div>
       <ButtonGroup className="pangination">
