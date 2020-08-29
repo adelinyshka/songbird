@@ -8,13 +8,13 @@ import { getRandomNumber } from './utils/Helpers';
 import Header from './layout/Header/Header';
 import {
   levelSelector,
-  statusAppSelector, scoreSelector, idClickedSelector,
+  statusAppSelector, scoreSelector, idClickedSelector, answerRightSelector,
 } from './redux/selectors';
 import {
   setLevel,
   setScore,
   setStatusApp,
-  setIdClicked,
+  setIdClicked, setAnswerRight,
 } from './redux/actions';
 import Question from './layout/Question/Question';
 import LeftBlock from './layout/LeftBlock/LeftBlock';
@@ -28,9 +28,10 @@ function App() {
   const isGameOn = useSelector(statusAppSelector);
   const score = useSelector(scoreSelector);
   const idClicked = useSelector(idClickedSelector);
-
+  const [guessed, setGuessed] = useState(false);
   const best = './assets/audio/best_end.mp3';
   const [playBest] = useSound(best);
+  const isRight = useSelector(answerRightSelector);
 
   useCallback(() => {
     dispatch(setIdClicked(idClicked));
@@ -57,7 +58,7 @@ function App() {
     isGameOn ? (
       <AppWrapper>
         <Header />
-        <Question answerID={answerID} />
+        <Question answerID={answerID} isRight={isRight} />
         <div className="alignment">
           <LeftBlock answerID={answerID} />
           <RightBlock answerID={answerID} />
@@ -71,7 +72,7 @@ function App() {
           <div className="end-game-wrapper">
             <div className="end-game">
               <h2>Игра закончена!</h2>
-              {score === 36 && (
+              {score === 30 && (
                 <>
                   <h3>Поздравляем с абсолютной победой!</h3>
                   <p>Вы набрали максимальное количество очков!</p>
@@ -80,7 +81,7 @@ function App() {
               <p>
                 Вы набрали&nbsp;
                 {score}
-                &nbsp;очков из 36.
+                &nbsp;очков из 30.
               </p>
               <Button
                 className="end-game-btn"

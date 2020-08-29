@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { useSelector } from 'react-redux';
@@ -9,16 +9,22 @@ import volume2 from '@iconify/icons-feather/volume-2';
 import volumeX from '@iconify/icons-feather/volume-x';
 import PropTypes from 'prop-types';
 import birdsData from '../../data/birdsData';
-import { answerRightSelector, levelSelector } from '../../redux/selectors';
+import { levelSelector } from '../../redux/selectors';
 import QuestionWrapper from './QuestionWrapper';
 
-const Question = ({ answerID }) => {
+const Question = ({ answerID, isRight }) => {
   const level = useSelector(levelSelector);
   const audioQuestion = birdsData[level][answerID - 1].audio;
-  const isRight = useSelector(answerRightSelector);
   const nameBird = birdsData[level][answerID - 1].name;
   const picBird = birdsData[level][answerID - 1].image;
   const picDefaultBird = './assets/img/customBird.jpg';
+  const player = useRef(null);
+
+  useLayoutEffect(() => {
+    if (player.current !== null && isRight === true) {
+      player.current.audio.current.pause();
+    }
+  }, [isRight]);
 
   return (
     <QuestionWrapper>
@@ -28,11 +34,11 @@ const Question = ({ answerID }) => {
             <>
               <div>
                 <img className="bird-pic" src={picBird} alt="" />
-
               </div>
               <div className="bird-block">
                 <h1 className="bird-name">{nameBird}</h1>
                 <AudioPlayer
+                  ref={player}
                   className="wow-player"
                   layout="stacked-reverse"
                   customProgressBarSection={[
@@ -70,6 +76,7 @@ const Question = ({ answerID }) => {
               <div className="bird-block">
                 <h1 className="bird-name-star">*****</h1>
                 <AudioPlayer
+                  ref={player}
                   className="wow-player"
                   layout="stacked-reverse"
                   customProgressBarSection={[
@@ -108,4 +115,5 @@ export default Question;
 
 Question.propTypes = {
   answerID: PropTypes.number.isRequired,
+  isRight: PropTypes.bool.isRequired,
 };

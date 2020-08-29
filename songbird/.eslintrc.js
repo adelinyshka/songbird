@@ -47,7 +47,7 @@ module.exports = {
         // 'react/sort-comp': 'off',
         // 'react/require-default-props': 'warn',
         // 'no-param-reassign': 'off',
-        // 'no-tabs': 'off',
+        'no-tabs': 'off',
         // 'react/jsx-indent-props': 'off',
         // 'react/forbid-prop-types': 'off',
         // 'react/jsx-curly-spacing': 'off',

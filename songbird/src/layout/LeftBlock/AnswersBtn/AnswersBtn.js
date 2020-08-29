@@ -17,7 +17,7 @@ import AnswersBtnWrapper from './AnswersBtnWrapper';
 const AnswersBtn = ({ answerID }) => {
   const dispatch = useDispatch();
   const score = useSelector(scoreSelector);
-  const [scores, setScores] = useState(6);
+  const [scores, setScores] = useState(5);
   const rightAnswerId = answerID;
   const [answerClicked, setAnswerClicked] = useState(false);
   const level = useSelector(levelSelector);
@@ -46,13 +46,13 @@ const AnswersBtn = ({ answerID }) => {
   useEffect(() => {
     dispatch(setAnswerRight(false));
     setAnswerClicked(false);
-    setScores(6);
+    setScores(5);
     dispatch(setWasClick(false));
   }, [level, dispatch]);
 
-  // useEffect(() => {
-  //   console.log(birdsData[level][answerID - 1].name);
-  // },[ answerID])
+  useEffect(() => {
+    console.log(birdsData[level][answerID - 1].name);
+  }, [answerID]);
 
   return birdsData[level].map((bird) => (
     <AnswersBtnWrapper
