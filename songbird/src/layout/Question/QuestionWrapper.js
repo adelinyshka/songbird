@@ -4,7 +4,7 @@ const QuestionWrapper = styled.div`
 	.default-wrapper {
 		display: flex;
 		padding: 20px;
-		border: 3px solid white;
+		border: 2px solid white;
 		border-radius: 16px;
 		font-family: 'Raleway', sans-serif;
 		

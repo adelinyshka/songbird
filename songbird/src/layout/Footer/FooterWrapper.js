@@ -16,7 +16,7 @@ const FooterWrapper = styled.footer`
 	.inactive {
 		background: #1F3F68!important;
 		color: white;
-		border: 3px solid white!important;
+		border: 2px solid white!important;
 		
 		@media (max-width: 768px) {
 			border: 1px solid white!important;
@@ -33,7 +33,7 @@ const FooterWrapper = styled.footer`
 	.active {
 		background: #5A98D0!important;
 		color: white;
-	  border: 3px solid white!important;
+	  border: 2px solid white!important;
 	  
 	  
 	  @media (max-width: 768px) {

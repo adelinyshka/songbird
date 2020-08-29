@@ -35,7 +35,6 @@ const Header = () => {
           </Button>
         ))}
       </ButtonGroup>
-
     </HeaderWrapper>
   );
 };

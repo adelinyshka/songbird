@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import useSound from 'use-sound';
 import AppWrapper from './AppWrapper';
 import RightBlock from './layout/RightBlock/RightBlock';
 import { getRandomNumber } from './utils/Helpers';
@@ -18,7 +19,6 @@ import {
 import Question from './layout/Question/Question';
 import LeftBlock from './layout/LeftBlock/LeftBlock';
 import Footer from './layout/Footer/Footer';
-import useSound from 'use-sound';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,10 +42,10 @@ function App() {
   }, [level]);
 
   useEffect(() => {
-    if(!isGameOn) {
+    if (!isGameOn) {
       playBest();
     }
-  },[isGameOn])
+  }, [isGameOn, playBest]);
 
   const startNewGame = useCallback(() => {
     dispatch(setStatusApp(true));
@@ -67,26 +67,29 @@ function App() {
     )
       : (
         <AppWrapper>
-	        <Header />
-	        <div className="end-game-wrapper">
-	          <div className="end-game">
-	            <h2>Игра закончена!</h2>
-		          {score === 36 && (
-	                <>
-                    <h3>Поздравляем с абсолютной победой!</h3>
-	                  <p>Вы набрали максимальное количество очков!</p>
-	                </>)}
+          <Header />
+          <div className="end-game-wrapper">
+            <div className="end-game">
+              <h2>Игра закончена!</h2>
+              {score === 36 && (
+                <>
+                  <h3>Поздравляем с абсолютной победой!</h3>
+                  <p>Вы набрали максимальное количество очков!</p>
+                </>
+              )}
               <p>
                 Вы набрали&nbsp;
                 {score}
                 &nbsp;очков из 36.
               </p>
-              <Button className="end-game-btn"
-                      onClick={() => startNewGame()}>
+              <Button
+                className="end-game-btn"
+                onClick={() => startNewGame()}
+              >
                 Повторить игру
               </Button>
-	          </div>
-	        </div>
+            </div>
+          </div>
         </AppWrapper>
       )
   );

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const birdsData = [
   [
     {
@@ -45,6 +46,7 @@ const birdsData = [
       image: 'https://live.staticflickr.com/65535/48456345286_dbc8530027.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC486956-190623_22.37h_nachtzwaluw_rechte%20heide_zang_ad%20_2ex_gezien_.mp3',
     },
+
     {
       id: 5,
       name: 'Кукушка',
@@ -137,6 +139,7 @@ const birdsData = [
       image: 'https://live.staticflickr.com/65535/48063004977_84252f9ceb.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/ZNCDXTUOFL/XC324106-Turkawka_Streptopelia_turtur_Poland_Jarek_Matusiak_2011625_07.mp3',
     },
+
     {
       id: 4,
       name: 'Дятел',

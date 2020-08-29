@@ -6,6 +6,7 @@ import motionPlayOutline from '@iconify/icons-mdi/motion-play-outline';
 import motionPauseOutline from '@iconify/icons-mdi/motion-pause-outline';
 import volume2 from '@iconify/icons-feather/volume-2';
 import volumeX from '@iconify/icons-feather/volume-x';
+import PropTypes from 'prop-types';
 import RightBlockWrapper from './RightBlockWrapper';
 import {
   idClickedSelector,
@@ -22,7 +23,6 @@ const RightBlock = ({ answerID }) => {
 
   return (
     <RightBlockWrapper>
-
       {wasClicked
         ? (
           <>
@@ -52,8 +52,8 @@ const RightBlock = ({ answerID }) => {
                   autoPlay={false}
                   autoPlayAfterSrcChange={false}
                   showJumpControls={false}
-                  src={ audioQuestion }
-                  id={ birdsData[level][answerID - 1].id }
+                  src={audioQuestion}
+                  id={birdsData[level][answerID - 1].id}
                   customIcons={{
                     play: <Icon icon={motionPlayOutline} color="white" />,
                     pause: <Icon icon={motionPauseOutline} color="white" />,
@@ -81,3 +81,7 @@ const RightBlock = ({ answerID }) => {
 };
 
 export default RightBlock;
+
+RightBlock.propTypes = {
+  answerID: PropTypes.number.isRequired,
+};

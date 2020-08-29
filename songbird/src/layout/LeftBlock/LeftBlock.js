@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonGroup } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import AnswersBtn from './AnswersBtn/AnswersBtn';
 import LeftBlockWrapper from './LeftBlockWrapper';
 
@@ -12,3 +13,7 @@ const LeftBlock = ({ answerID }) => (
 );
 
 export default LeftBlock;
+
+LeftBlock.propTypes = {
+  answerID: PropTypes.number.isRequired,
+};

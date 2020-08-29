@@ -26,7 +26,7 @@ const AppWrapper = styled.div`
 	}
 	
 	.end-game-wrapper {
-			height: calc(100vh - 60px);
+			height: calc(100vh - 260px);
 	    display: flex;
 	    justify-content: center;
 	    align-items: center;

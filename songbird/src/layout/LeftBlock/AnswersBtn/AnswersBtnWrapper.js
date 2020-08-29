@@ -5,7 +5,6 @@ const AnswersBtnWrapper = styled.button`
 		box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
 		border-radius: 10px;
 		color: white;
-		max-width: 350px;
 		width: 100%;
 		min-width: 240px;
 		height: 50px;

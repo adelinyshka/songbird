@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const LeftBlockWrapper = styled.div`
 	border-radius: 16px;
-	border: 3px solid white;
-	padding: 20px;
+	border: 2px solid white;
+	padding: 10px;
 	width: 49%;
 	
 	@media (max-width: 768px) {

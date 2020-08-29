@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import useSound from 'use-sound';
 import birdsData from '../../../data/birdsData';
 import {
   setAnswerRight,
@@ -8,12 +9,10 @@ import {
   setWasClick,
 } from '../../../redux/actions';
 import {
-	 levelSelector,
+  levelSelector,
   scoreSelector,
 } from '../../../redux/selectors';
 import AnswersBtnWrapper from './AnswersBtnWrapper';
-import useSound from 'use-sound';
-
 
 const AnswersBtn = ({ answerID }) => {
   const dispatch = useDispatch();
@@ -51,9 +50,9 @@ const AnswersBtn = ({ answerID }) => {
     dispatch(setWasClick(false));
   }, [level, dispatch]);
 
-  useEffect(() => {
-    console.log(birdsData[level][answerID - 1].name);
-  },[answerID, level])
+  // useEffect(() => {
+  //   console.log(birdsData[level][answerID - 1].name);
+  // },[ answerID])
 
   return birdsData[level].map((bird) => (
     <AnswersBtnWrapper
@@ -62,15 +61,13 @@ const AnswersBtn = ({ answerID }) => {
       id={bird.id}
       onClick={
         () => {
-        checkAnswer(bird.id, rightAnswerId);
-        if(bird.id === rightAnswerId) {
-          playWrong()
+          checkAnswer(bird.id, rightAnswerId);
+          if (bird.id === rightAnswerId) {
+            playWrong();
+          } else {
+            playRight();
+          }
         }
-        else {
-          playRight()
-        }
-
-      }
       }
     >
       {bird.name}

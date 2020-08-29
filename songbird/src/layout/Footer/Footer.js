@@ -31,7 +31,7 @@ const Footer = () => {
             className="footer-btn active"
             onClick={() => goToNextLevel()}
           >
-Следующий вопрос
+            Следующий вопрос
           </Button>
         )
         : (
@@ -40,11 +40,10 @@ const Footer = () => {
             disabled
             onClick={() => {}}
           >
-Выберите верный ответ
+            Выберите верный ответ
           </Button>
         )}
     </FooterWrapper>
-
   );
 };
 
