@@ -17,7 +17,8 @@ const LeftBlockWrapper = styled.div`
 		flex-direction: column;
     justify-content: space-between;
     align-self: auto;
-    height: 400px;
+    height: 329px;
+
     
     @media (max-width: 768px) {
       height: auto;

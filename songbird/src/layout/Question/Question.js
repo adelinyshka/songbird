@@ -17,7 +17,7 @@ const Question = ({ answerID, isRight }) => {
   const audioQuestion = birdsData[level][answerID - 1].audio;
   const nameBird = birdsData[level][answerID - 1].name;
   const picBird = birdsData[level][answerID - 1].image;
-  const picDefaultBird = './assets/img/customBird.jpg';
+  const picDefaultBird = './assets/img/default-pic.jpg';
   const player = useRef(null);
 
   useLayoutEffect(() => {

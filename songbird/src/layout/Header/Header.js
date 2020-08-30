@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <div className="wrapper-header">
-        <h1 className="logo">Song Bird</h1>
+        <h1 className="logo">Guess the sound</h1>
         <div className="score">
           счет:
           {score}

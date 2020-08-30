@@ -25,10 +25,13 @@ const QuestionWrapper = styled.div`
 		width: 100px;
 		height: 100px;
 		border-radius: 50%;
+		background-clip: border-box;
+		background-origin: border-box;
+		background-size: contain;
 	}
 	
 	.bird-name-star {
-		font-size: 35px;
+		font-size: 25px;
 		display: flex;
     align-items: center;
     padding: 0 0 0 20px;

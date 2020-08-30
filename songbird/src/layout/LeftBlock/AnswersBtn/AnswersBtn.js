@@ -50,10 +50,6 @@ const AnswersBtn = ({ answerID }) => {
     dispatch(setWasClick(false));
   }, [level, dispatch]);
 
-  useEffect(() => {
-    console.log(birdsData[level][answerID - 1].name);
-  }, [answerID]);
-
   return birdsData[level].map((bird) => (
     <AnswersBtnWrapper
       variant="primary"

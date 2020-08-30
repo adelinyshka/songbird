@@ -14,7 +14,7 @@ import {
   setLevel,
   setScore,
   setStatusApp,
-  setIdClicked, setAnswerRight,
+  setIdClicked,
 } from './redux/actions';
 import Question from './layout/Question/Question';
 import LeftBlock from './layout/LeftBlock/LeftBlock';
@@ -28,7 +28,6 @@ function App() {
   const isGameOn = useSelector(statusAppSelector);
   const score = useSelector(scoreSelector);
   const idClicked = useSelector(idClickedSelector);
-  const [guessed, setGuessed] = useState(false);
   const best = './assets/audio/best_end.mp3';
   const [playBest] = useSound(best);
   const isRight = useSelector(answerRightSelector);

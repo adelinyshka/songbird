@@ -35,7 +35,7 @@ const HeaderWrapper = styled.header`
 	}
 	
 	.header-btn {
-		padding: 5px 42.5px;
+		padding: 5px 48px;
 		background: #5A98D0;
 		border: 2px solid white;
 		margin: 0!important;

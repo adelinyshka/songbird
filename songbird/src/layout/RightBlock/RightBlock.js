@@ -72,7 +72,7 @@ const RightBlock = ({ answerID }) => {
           <div className="bird-text-container">
             <div className="bird-text-default">
               <p>Послушайте плеер.</p>
-              <p>Выберите птицу из списка</p>
+              <p>Выберите музыкальный инструмент из списка</p>
             </div>
           </div>
         )}

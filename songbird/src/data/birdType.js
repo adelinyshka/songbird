@@ -1,10 +1,10 @@
 const birdType = [
-  { level: 0, text:	'Разминка' },
-  { level: 1, text: 'Воробьиные' },
-  { level: 2, text: 'Лесные птицы' },
-  { level: 3, text: 'Певчие птицы' },
-  { level: 4, text: 'Хищные птицы' },
-  { level: 5, text: 'Морские птицы' },
+  { level: 0, text:	'Струнные' },
+  { level: 1, text: 'Духовые' },
+  { level: 2, text: 'Язычковые' },
+  { level: 3, text: 'Ударные' },
+  { level: 4, text: 'Клавишные' },
+  { level: 5, text: 'Электромузыкальные' },
 ];
 
 export default birdType;

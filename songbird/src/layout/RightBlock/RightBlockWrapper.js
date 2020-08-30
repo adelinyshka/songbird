@@ -5,17 +5,19 @@ const RightBlockWrapper = styled.div`
 	border: 2px solid white;
 	padding: 10px;
 	width: 49%;
+	height: 350px;
 	
 	@media (max-width: 768px) {
 		width: 100%;
 		margin: 10px 0 0 0;
 		border: 1px solid white;
+		height: auto;
 	}
 	
 	.bird-text-container {
 		display: flex;
     justify-content: center;
-    height: 400px;
+    height: 350px;
     font-family: 'Raleway', sans-serif;
     
     @media (max-width: 768px) {
@@ -39,6 +41,8 @@ const RightBlockWrapper = styled.div`
 		padding: 20px 0 0 0;
 		text-align: left;
 		font-family: 'Raleway', sans-serif;
+		max-height: 160px;
+		overflow: scroll;
 	}
 	
 	.wow-player.rhap_container {
